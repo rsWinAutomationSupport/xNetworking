@@ -1,8 +1,8 @@
-﻿[![Build status](https://ci.appveyor.com/api/projects/status/obmudad7gy8usbx2/branch/master?svg=true)](https://ci.appveyor.com/project/PowerShell/xnetworking/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/obmudad7gy8usbx2/branch/master?svg=true)](https://ci.appveyor.com/project/PowerShell/xnetworking/branch/master)
 
 # xNetworking
 
-The **xNetworking** module contains the **xFirewall, xIPAddress** and **xDnsServerAddress** DSC resources for configuring a node’s IP address, DNS server address, and firewall rules. 
+The **xNetworking** module contains the **xFirewall, xIPAddress**, **xDnsServerAddress** and **xHostsFile** DSC resources for configuring a node’s IP address, DNS server address, firewall rules and Host file contents. 
 
 
 ## Contributing
@@ -14,6 +14,7 @@ Please check out common DSC Resources [contributing guidelines](https://github.c
 * **xFirewall** sets a node's firewall rules.
 * **xIPAddress** sets a node's IP address.
 * **xDnsServerAddress** sets a node's DNS server.
+* **xHostsFile** manages hosts file contents 
 
 ### xIPAddress
 
@@ -46,8 +47,16 @@ Please check out common DSC Resources [contributing guidelines](https://github.c
 * **ApplicationPath**: Path and filename of the program for which the rule is applied.
 * **Service**: Specifies the short name of a Windows service to which the firewall rule applies.
 
+### xHostsFile
+
+* **HostName**: Name of the host entry to add in the hosts file
+* **IPAddress**: IP address associated with the host above
+* **Ensure**: Ensure that the entry is Present or Absent
 
 ## Versions
+
+### Unreleased
+* Added xHostsFile resource to manage Host file contents
 
 ### 2.2.0.0
 * Changes in xFirewall resources to meet Test-xDscResource criteria
