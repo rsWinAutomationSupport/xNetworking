@@ -1,9 +1,9 @@
 # DSC configuration for Firewall
-# 
+#
 
 configuration Sample_xFirewall_AddFirewallRuleToNewGroup
 {
-    param 
+    param
     (
         [string[]]$NodeName = 'localhost'
     )
@@ -16,11 +16,10 @@ configuration Sample_xFirewall_AddFirewallRuleToNewGroup
         {
             Name                  = "NotePadFirewallRule"
             DisplayName           = "Firewall Rule for Notepad.exe"
-            DisplayGroup          = "NotePad Firewall Rule Group"
+            Group                 = "NotePad Firewall Rule Group"
             Ensure                = "Present"
-            Access                = "Block"
-            Description           = "Firewall Rule for Notepad.exe"  
-            ApplicationPath       = "c:\windows\system32\notepad.exe"
+            Description           = "Firewall Rule for Notepad.exe"
+            Program               = "c:\windows\system32\notepad.exe"
         }
     }
  }

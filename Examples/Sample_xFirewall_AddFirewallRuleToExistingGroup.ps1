@@ -1,9 +1,9 @@
 # DSC configuration for Firewall
-# 
+#
 
 configuration Sample_xFirewall_AddFirewallRuleToExistingGroup
 {
-    param 
+    param
     (
         [string[]]$NodeName = 'localhost'
     )
@@ -16,18 +16,16 @@ configuration Sample_xFirewall_AddFirewallRuleToExistingGroup
         {
             Name                  = "MyFirewallRule"
             DisplayName           = "My Firewall Rule"
-            DisplayGroup          = "My Firewall Rule Group"
-            Access                = "Allow"
+            Group                 = "My Firewall Rule Group"
         }
 
         xFirewall Firewall1
         {
             Name                  = "MyFirewallRule1"
             DisplayName           = "My Firewall Rule"
-            DisplayGroup          = "My Firewall Rule Group"
+            Group                 = "My Firewall Rule Group"
             Ensure                = "Present"
-            Access                = "Allow"
-            State                 = "Enabled"
+            Enabled               = "True"
             Profile               = ("Domain", "Private")
         }
     }

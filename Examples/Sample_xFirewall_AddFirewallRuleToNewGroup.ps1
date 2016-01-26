@@ -2,7 +2,7 @@
 
 configuration Sample_xFirewall_AddFirewallRuleToNewGroup
 {
-    param 
+    param
     (
         [string[]]$NodeName = 'localhost'
     )
@@ -13,9 +13,8 @@ configuration Sample_xFirewall_AddFirewallRuleToNewGroup
     {
         xFirewall Firewall
         {
-            Name                  = "MyAppFirewallRule"            
-            ApplicationPath       = "c:\windows\system32\MyApp.exe"
-            Access                = "Allow"
+            Name                  = "MyAppFirewallRule"
+            Program               = "c:\windows\system32\MyApp.exe"
         }
     }
  }
